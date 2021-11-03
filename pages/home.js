@@ -1,17 +1,6 @@
-/*function Home(props) {
-    return (
-        <div>
-            <h1>Home sweet Home</h1>
-        </div>
-    );
-}*/
+import React from "react";
+import Header from "../modules/header/header.js";
 
-import Header from "../modules/header/header";
+const Hello = () => <Header />;
 
-const Home = () => (
-  <>
-    <Header />
-  </>
-);
-
-export default Home;
+export default Hello;
