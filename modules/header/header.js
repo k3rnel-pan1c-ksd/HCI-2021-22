@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 
 import LogoImg from "../../assets/logo.png";
@@ -11,6 +12,8 @@ const magnifierWidth = 26;
 const magnifierHeight = magnifierWidth / (26 / 25);
 
 const Header = () => {
+  const [isClicked, setIsClicked] = useState(false);
+
   return (
     <header className="px-5 py-5 relative flex items-center bg-hci-header sm:bg-transparent sm:h-80">
       <div className="hidden sm:block z--1">
@@ -43,7 +46,10 @@ const Header = () => {
             />
             <div className="w-8" />
             <Image
-              className="cursor-pointer"
+              onClick={() => setIsClicked(!isClicked)}
+              className={`cursor-pointer transition-all ease-linear duration-700 ${
+                isClicked ? "transform rotate-90" : ""
+              }`}
               src={"/hamburger.svg"}
               layout="fixed"
               width={hamburgerWidth}
