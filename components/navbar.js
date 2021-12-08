@@ -1,12 +1,16 @@
 import { navigationItems } from "../const/navbarList";
 
-const NavBar = () => {
+const NavBar = ({ classes }) => {
   return (
-    <nav className="hidden sm:inline-flex list-none font-medium text-hci-lila">
+    <nav
+      className={`${
+        classes ? "block" : "hidden"
+      } sm:inline-flex list-none font-medium text-hci-lila ${classes}`}
+    >
       {navigationItems.map((item) => (
         <li
           key={item}
-          className="w-36 py-4 font-normal text-2xl text-center text-purple-900 hover:text-white hover:bg-purple-900 cursor-pointer"
+          className="px-5 py-2 whitespace-nowrap w-min hover:bg-hci-lila hover:bg-opacity-50 hover:text-white cursor-pointer"
         >
           {item}
         </li>

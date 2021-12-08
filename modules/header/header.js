@@ -4,6 +4,7 @@ import Image from "next/image";
 import LogoImg from "../../assets/logo.png";
 import HeroImg from "../../assets/hero.png";
 import NavBar from "../../components/navbar";
+import BurgerNavigation from "../../components/burgerNavigation";
 
 const hamburgerWidth = 45;
 const hamburgerHeight = hamburgerWidth / (35 / 50);
@@ -36,8 +37,9 @@ const Header = () => {
             alt="Design logo"
           />
           <div className="flex items-center sm:hidden">
+            <BurgerNavigation isOpen={isClicked} />
             <Image
-              className="cursor-pointer"
+              className="cursor-pointer z-0"
               src={"/magnifier.svg"}
               layout="fixed"
               width={magnifierWidth}
@@ -47,7 +49,7 @@ const Header = () => {
             <div className="w-8" />
             <Image
               onClick={() => setIsClicked(!isClicked)}
-              className={`cursor-pointer transition-all ease-linear duration-700 ${
+              className={`cursor-pointer z-50 transition-all ease-linear duration-500 ${
                 isClicked ? "transform rotate-90" : ""
               }`}
               src={"/hamburger.svg"}

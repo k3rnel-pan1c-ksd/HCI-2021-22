@@ -8,14 +8,7 @@ const BurgerNavigation = ({ isOpen }) => {
         !isOpen ? "translate-x-full" : "translate-x-0"
       } top-0 transform translate fixed left-0 m-0 p-0 bg-hci-lila-light sm:hidden w-screen transition duration-500 ease-in-out flex-col justify-center items-center h-screen z-40`}
     >
-      {navigationItems.map((e) => (
-        <li
-          key={e}
-          className="h-1/5 w-min text-center mx-auto my-0 list-none p-0 m-0"
-        >
-          {e}
-        </li>
-      ))}
+      <NavBar classes=" flex flex-col h-full w-full justify-center items-center" />
     </main>
   );
 };
