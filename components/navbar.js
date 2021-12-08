@@ -1,11 +1,4 @@
-const navigationItems = [
-  "Home",
-  "About us",
-  "Showcase",
-  "Blog",
-  "Contact",
-  "Sign in",
-];
+import { navigationItems } from "../const/navbarList";
 
 const NavBar = () => {
   return (
