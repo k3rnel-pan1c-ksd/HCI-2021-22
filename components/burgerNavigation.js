@@ -1,0 +1,23 @@
+import { navigationItems } from "../const/navbarList";
+import NavBar from "./navbar";
+
+const BurgerNavigation = ({ isOpen }) => {
+  return (
+    <main
+      className={`${
+        !isOpen ? "translate-x-full" : "translate-x-0"
+      } top-0 transform translate fixed left-0 m-0 p-0 bg-hci-lila-light sm:hidden w-screen transition duration-500 ease-in-out flex-col justify-center items-center h-screen z-40`}
+    >
+      {navigationItems.map((e) => (
+        <li
+          key={e}
+          className="h-1/5 w-min text-center mx-auto my-0 list-none p-0 m-0"
+        >
+          {e}
+        </li>
+      ))}
+    </main>
+  );
+};
+
+export default BurgerNavigation;
